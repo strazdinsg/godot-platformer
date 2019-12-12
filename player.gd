@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+const UP = Vector2(0, -1)
 var motion = Vector2()
 
 func _physics_process(delta):
@@ -11,7 +12,11 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		
-	# Apply gravity: 9.8m/s^2 every second
-	motion.y += 9.8
+	
+	# Apply gravity: 9.8m/s^2 every second when we are not touching a floor
+	if is_on_floor():
+		motion.y = 0
+	else:
+		motion.y += 9.8
 		
-	move_and_slide(motion)
+	move_and_slide(motion, UP)
