@@ -16,6 +16,9 @@ func _physics_process(delta):
 	# Apply gravity: 9.8m/s^2 every second when we are not touching a floor
 	if is_on_floor():
 		motion.y = 0
+		# Allow to jump when on the floor
+		if Input.is_action_just_pressed("ui_up"):
+			motion.y -= 320
 	else:
 		motion.y += 9.8
 		
