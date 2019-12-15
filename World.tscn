@@ -11,7 +11,7 @@
 [ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=9]
 [ext_resource path="res://wall.png" type="Texture" id=10]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -32,217 +32,235 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.0273, 32 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 32 )
 
 [node name="World" type="Node2D"]
 
 [node name="player" type="KinematicBody2D" parent="."]
-position = Vector2( 160, 96 )
+editor/display_folded = true
+position = Vector2( 192, 288 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="player"]
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 animation = "Idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 shape = SubResource( 2 )
 
-[node name="wall" type="StaticBody2D" parent="."]
-position = Vector2( 160, 192 )
+[node name="Walls" type="Node" parent="."]
+
+[node name="wall" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 224, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall"]
+[node name="Sprite" type="Sprite" parent="Walls/wall"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall"]
+shape = SubResource( 3 )
 
-[node name="wall2" type="StaticBody2D" parent="."]
-position = Vector2( 224, 192 )
+[node name="wall2" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 288, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall2"]
+[node name="Sprite" type="Sprite" parent="Walls/wall2"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall2"]
+shape = SubResource( 3 )
 
-[node name="wall3" type="StaticBody2D" parent="."]
-position = Vector2( 288, 192 )
+[node name="wall3" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 352, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall3"]
+[node name="Sprite" type="Sprite" parent="Walls/wall3"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall3"]
+shape = SubResource( 3 )
 
-[node name="wall4" type="StaticBody2D" parent="."]
-position = Vector2( 352, 192 )
+[node name="wall4" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 416, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall4"]
+[node name="Sprite" type="Sprite" parent="Walls/wall4"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall4"]
+shape = SubResource( 3 )
 
-[node name="wall5" type="StaticBody2D" parent="."]
-position = Vector2( 416, 192 )
+[node name="wall5" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 480, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall5"]
+[node name="Sprite" type="Sprite" parent="Walls/wall5"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall5"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall5"]
+shape = SubResource( 3 )
 
-[node name="wall6" type="StaticBody2D" parent="."]
-position = Vector2( 416, 128 )
+[node name="wall6" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 480, 320 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall6"]
+[node name="Sprite" type="Sprite" parent="Walls/wall6"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall6"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall6"]
+shape = SubResource( 3 )
 
-[node name="wall7" type="StaticBody2D" parent="."]
-position = Vector2( 480, 128 )
+[node name="wall7" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 544, 320 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall7"]
+[node name="Sprite" type="Sprite" parent="Walls/wall7"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall7"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall7"]
+shape = SubResource( 3 )
 
-[node name="wall8" type="StaticBody2D" parent="."]
-position = Vector2( 480, 64 )
+[node name="wall8" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 544, 256 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall8"]
+[node name="Sprite" type="Sprite" parent="Walls/wall8"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall8"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall8"]
+shape = SubResource( 3 )
 
-[node name="wall9" type="StaticBody2D" parent="."]
-position = Vector2( 480, 0 )
+[node name="wall9" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 544, 192 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall9"]
+[node name="Sprite" type="Sprite" parent="Walls/wall9"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall9"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall9"]
+shape = SubResource( 3 )
 
-[node name="wall10" type="StaticBody2D" parent="."]
+[node name="wall10" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 160, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/wall10"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall10"]
+shape = SubResource( 3 )
+
+[node name="wall11" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 96, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/wall11"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall11"]
+shape = SubResource( 3 )
+
+[node name="wall12" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 96, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/wall12"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall12"]
+shape = SubResource( 3 )
+
+[node name="wall13" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 96, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/wall13"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall13"]
+shape = SubResource( 3 )
+
+[node name="wall14" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
 position = Vector2( 96, 192 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall10"]
+[node name="Sprite" type="Sprite" parent="Walls/wall14"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall10"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall14"]
+shape = SubResource( 3 )
 
-[node name="wall11" type="StaticBody2D" parent="."]
-position = Vector2( 32, 192 )
+[node name="wall15" type="StaticBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 96, 128 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="wall11"]
+[node name="Sprite" type="Sprite" parent="Walls/wall15"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall11"]
-shape = SubResource( 1 )
-
-[node name="wall12" type="StaticBody2D" parent="."]
-position = Vector2( 32, 128 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="wall12"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall12"]
-shape = SubResource( 1 )
-
-[node name="wall13" type="StaticBody2D" parent="."]
-position = Vector2( 32, 64 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="wall13"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall13"]
-shape = SubResource( 1 )
-
-[node name="wall14" type="StaticBody2D" parent="."]
-position = Vector2( 32, 0 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="wall14"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall14"]
-shape = SubResource( 1 )
-
-[node name="wall15" type="StaticBody2D" parent="."]
-position = Vector2( 32, -64 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="wall15"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall15"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/wall15"]
+shape = SubResource( 3 )
