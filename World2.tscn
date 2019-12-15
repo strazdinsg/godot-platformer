@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://JungleDirtTileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Door.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Node2D"]
 
@@ -18,14 +15,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Door" type="Area2D" parent="."]
-position = Vector2( 384, 96 )
-script = ExtResource( 2 )
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 256 )
 
-[node name="Sprite" type="Sprite" parent="Door"]
-texture = ExtResource( 3 )
-centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2( 32, 32 )
-shape = SubResource( 1 )
+[node name="Door" parent="." instance=ExtResource( 3 )]
+position = Vector2( 288, 0 )
+nextScene = "res://World.tscn"
